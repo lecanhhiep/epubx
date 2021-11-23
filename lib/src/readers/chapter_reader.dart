@@ -30,6 +30,7 @@ class ChapterReader {
             .substring(contentSourceAnchorCharIndex + 1);
       }
       contentFileName = Uri.decodeFull(contentFileName!);
+	  contentFileName = contentFileName.replaceFirst("../", "");
       EpubTextContentFileRef? htmlContentFileRef;
 	  print('!bookRef.Content!.Html!!bookRef.Content!.Html!!bookRef.Content!.Html!');
 //	  print(bookRef.Content!.Html!.toString());
