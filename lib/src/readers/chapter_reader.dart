@@ -33,6 +33,11 @@ class ChapterReader {
       EpubTextContentFileRef? htmlContentFileRef;
 	  print('!bookRef.Content!.Html!!bookRef.Content!.Html!!bookRef.Content!.Html!');
 	  print(!bookRef.Content!.Html!);
+	  
+	// Get all keys
+  !bookRef.Content!.Html!.keys.forEach((key) {
+    print(key);
+  });
       if (!bookRef.Content!.Html!.containsKey(contentFileName)) {
         throw Exception(
             'Incorrect EPUB manifest: item with href = \"$contentFileName\" is missing.');
