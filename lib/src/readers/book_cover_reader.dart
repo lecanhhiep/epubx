@@ -31,15 +31,15 @@ class BookCoverReader {
             coverMetaItem.Content!.toLowerCase());
     if (coverManifestItem == null) {
 	print('NO cover image found, skip1');
-   //   throw Exception(
-     //     'Incorrect EPUB manifest: item with ID = \"${coverMetaItem.Content}\" is missing.');
+      throw Exception(
+          'Incorrect EPUB manifest: item with ID = \"${coverMetaItem.Content}\" is missing.');
     }
 
     EpubByteContentFileRef? coverImageContentFileRef;
     if (!bookRef.Content!.Images!.containsKey(coverManifestItem.Href)) {
 	print('NO cover image found, skip2');
-    //  throw Exception(
-      //    'Incorrect EPUB manifest: item with href = \"${coverManifestItem.Href}\" is missing.');
+      throw Exception(
+          'Incorrect EPUB manifest: item with href = \"${coverManifestItem.Href}\" is missing.');
     }
 
     coverImageContentFileRef = bookRef.Content!.Images![coverManifestItem.Href];
