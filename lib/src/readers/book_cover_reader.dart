@@ -51,7 +51,7 @@ class BookCoverReader {
                                                 } catch(err, stackstrace) {
                                                   print(stackstrace);
                                                 }
-												Uint8List blankBytes = Base64Codec().decode("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");    
+												Uint8List blankBytes = Base64Codec().decode("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");    
 
 												return images.decodeImage(blankBytes);
   }
