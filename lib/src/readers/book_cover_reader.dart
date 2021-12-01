@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:image/image.dart' as images;
+import 'dart:typed_data';
+import 'dart:convert';
 
 import '../ref_entities/epub_book_ref.dart';
 import '../ref_entities/epub_byte_content_file_ref.dart';
