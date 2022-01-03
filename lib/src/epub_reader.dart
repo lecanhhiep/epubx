@@ -118,10 +118,16 @@ class EpubReader {
     });
 
     await Future.forEach(contentRef.AllFiles!.keys, (dynamic key) async {
-      if (!result.AllFiles!.containsKey(key)) {
+      try {
+	  
+	  if (!result.AllFiles!.containsKey(key)) {
         result.AllFiles![key] =
             await readByteContentFile(contentRef.AllFiles![key]!);
       }
+	  
+	  	   } catch(err, stackstrace) {
+       print(stackstrace);
+     }
     });
 
     return result;
