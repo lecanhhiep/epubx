@@ -132,6 +132,7 @@ class EpubReader {
     var result = <String, EpubTextContentFile>{};
 
     await Future.forEach(textContentFileRefs.keys, (dynamic key) async {
+	try {
       EpubContentFileRef value = textContentFileRefs[key]!;
       var textContentFile = EpubTextContentFile();
       textContentFile.FileName = value.FileName;
@@ -139,6 +140,9 @@ class EpubReader {
       textContentFile.ContentMimeType = value.ContentMimeType;
       textContentFile.Content = await value.readContentAsText();
       result[key] = textContentFile;
+	   } catch(err, stackstrace) {
+       print(stackstrace);
+     }
     });
     return result;
   }
